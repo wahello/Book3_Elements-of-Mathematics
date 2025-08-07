@@ -3,7 +3,7 @@
 # Authored by Weisheng Jiang
 # Book 3  |  From Basic Arithmetic to Machine Learning
 # Published and copyrighted by Tsinghua University Press
-# Beijing, China, 2022
+# Beijing, China, 2025
 ###############
 
 
@@ -41,7 +41,9 @@ f_x_array = f_x_fcn(x_array)
 
 fig = plt.figure(figsize=plt.figaspect(0.5))
 ax = fig.add_subplot(1, 2, 1)
-
+## 设置背景透明
+fig.patch.set_alpha(0)  # 设置整个图形背景为透明
+ax.set_facecolor('none')  # 设置坐标轴背景为透明
 ax.plot(x_array, f_x_array, 'k', linewidth = 1.5) 
 ax.plot(x_0, y_0, 'xr', markersize = 12) 
 ax.set_xlabel("$\it{x}$")
@@ -74,7 +76,9 @@ ax.spines['right'].set_visible(False)
 ax.spines['top'].set_visible(False)
 
 ax = fig.add_subplot(1, 2, 2)
-
+## 设置背景透明
+fig.patch.set_alpha(0)  # 设置整个图形背景为透明
+ax.set_facecolor('none')  # 设置坐标轴背景为透明
 error = f_x_array - f_series_array
 ax.plot(x_array, error, 'r', linewidth = 1.5) 
 ax.fill_between(x_array, 
